@@ -8,6 +8,8 @@ const UserProfileFormFields = lazy(
     () => import("keycloakify/login/UserProfileFormFields")
 );
 
+import "./main.css";
+
 const doMakeUserConfirmPassword = true;
 
 export default function KcPage(props: { kcContext: KcContext }) {
