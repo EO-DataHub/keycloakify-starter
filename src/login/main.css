@@ -2,7 +2,23 @@
    display: none !important;
 }
 
-.kcFormGroupClass {
+.kcLabelClass {
+   display: none;
+}
+
+.kcInputClass {
+   display: none !important;
+}
+
+.kcInputGroup {
+   display: none;
+}
+
+.kcFormSettingClass {
+   display: none !important;
+}
+
+.kcButtonClass[name="login"] {
    display: none !important;
 }
 
