@@ -2,24 +2,28 @@
    display: none !important;
 }
 
-.kcLabelClass {
+.kcFormGroupClass:has(input#username) {
    display: none;
 }
 
-.kcInputClass {
-   display: none !important;
-}
-
-.kcInputGroup {
+.kcFormGroupClass:has(input#password) {
    display: none;
 }
 
-.kcFormSettingClass {
-   display: none !important;
+.kcFormGroupClass:has(input#rememberMe) {
+   display: none;
 }
 
 .kcButtonClass[name="login"] {
-   display: none !important;
+   display: none;
+}
+
+.kcLabelClass {
+   color: white;
+}
+
+.instruction span {
+   color: white;
 }
 
 .kcBodyClass {
