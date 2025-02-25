@@ -2,7 +2,7 @@
    display: none !important;
 }
 
-.kcFormGroupClass:has(input#username) {
+.kcFormGroupClass:has(> input#username) {
    display: none;
 }
 
