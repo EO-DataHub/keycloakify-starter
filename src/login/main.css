@@ -1,47 +1,4 @@
-:root {
-    --eodh-navy: #1a273f;
-    --eodh-accent: #4c72ba;
-    --eodh-accent-hover: #3f64ab;
-    --eodh-steel: #637189;
-    --eodh-label: #333;
-    --eodh-band-bg: #f3f3f3;
-    --eodh-button-text: #fff;
-    --eodh-button-disabled: #f0f0f3;
-    --eodh-card-shadow: 0 8px 16px rgb(0 0 0 / 15%);
-    --eodh-content-border: 1px solid rgb(128 128 128 / 15.8%);
-    --eodh-radius-sm: 4px;
-    --eodh-radius-md: 8px;
-    --eodh-radius-lg: 10px;
-    --eodh-footer-link: rgb(255 255 255 / 74%);
-    --eodh-footer-link-hover: #d5e1ff;
-}
-
-@font-face {
-    font-family: "Fira Sans";
-    src:
-        local("Fira Sans Regular"),
-        url("./assets/fonts/FiraSans-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Fira Sans";
-    src:
-        local("Fira Sans Medium"),
-        url("./assets/fonts/FiraSans-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Fira Sans";
-    src:
-        local("Fira Sans Bold"),
-        url("./assets/fonts/FiraSans-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-display: swap;
-}
+@import "../shared/eodh-tokens.css";
 
 body.kcBodyClass {
     font-family: "Fira Sans", sans-serif;

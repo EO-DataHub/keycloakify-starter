@@ -1,0 +1,67 @@
+@import "../shared/eodh-tokens.css";
+
+/* EO DataHub skin for the Account Console v3 (PatternFly 5) */
+
+/* Doubled selectors beat PatternFly's own rules regardless of bundled CSS order */
+:root:root {
+    --pf-v5-global--FontFamily--text: "Fira Sans", helvetica, arial, sans-serif;
+    --pf-v5-global--FontFamily--text--vf: "Fira Sans", helvetica, arial, sans-serif;
+    --pf-v5-global--FontFamily--heading: "Fira Sans", helvetica, arial, sans-serif;
+    --pf-v5-global--FontFamily--heading--vf: "Fira Sans", helvetica, arial, sans-serif;
+    --pf-v5-global--primary-color--100: var(--eodh-accent);
+    --pf-v5-global--primary-color--200: var(--eodh-accent-hover);
+    --pf-v5-global--link--Color: var(--eodh-accent);
+    --pf-v5-global--link--Color--hover: var(--eodh-accent-hover);
+    /* Input focus borders and focus rings */
+    --pf-v5-global--active-color--100: var(--eodh-accent);
+    /* Current nav/tab item borders */
+    --pf-v5-global--active-color--400: var(--eodh-accent);
+}
+
+.pf-v5-c-masthead.pf-v5-c-masthead {
+    --pf-v5-c-masthead--BackgroundColor: var(--eodh-navy);
+}
+
+.pf-v5-c-masthead__brand img {
+    height: 36px;
+}
+
+.pf-v5-c-page__sidebar.pf-v5-c-page__sidebar {
+    --pf-v5-c-page__sidebar--BackgroundColor: var(--eodh-navy);
+}
+
+.pf-v5-c-page__sidebar .pf-v5-c-nav {
+    --pf-v5-c-nav--BackgroundColor: var(--eodh-navy);
+    --pf-v5-c-nav__link--m-current--after--BorderColor: var(--eodh-accent);
+    --pf-v5-c-nav__link--m-current--BackgroundColor: rgb(255 255 255 / 8%);
+}
+
+/* Navy footer band matching the login pages; margin-top pins it to the bottom */
+#eodh-account-footer {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 2rem;
+    padding: 1.25rem 2rem;
+    font-size: 0.875rem;
+    color: var(--eodh-footer-link);
+    background-color: var(--eodh-navy);
+    border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+#eodh-account-footer nav {
+    display: flex;
+    gap: 1.25rem;
+}
+
+#eodh-account-footer a {
+    color: var(--eodh-footer-link);
+    text-decoration: none;
+}
+
+#eodh-account-footer a:hover {
+    color: var(--eodh-footer-link-hover);
+    text-decoration: underline;
+}
