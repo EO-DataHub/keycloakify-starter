@@ -9,7 +9,7 @@
 
 // @ts-nocheck
 
-import logoWhiteUrl from "../../login/assets/eo-datahub-logo-white.png";
+import logoColourUrl from "../../login/assets/eo-datahub-logo-colour.svg";
 import { KeycloakMasthead, label, useEnvironment } from "../../shared/keycloak-ui-shared";
 import { Button } from "../../shared/@patternfly/react-core";
 import { ExternalLinkSquareAltIcon } from "../../shared/@patternfly/react-icons";
@@ -55,11 +55,14 @@ export const Header = () => {
     return (
         <KeycloakMasthead
             data-testid="page-header"
+            // EODH: light site header; backgroundColor adds .pf-m-light on PF's Masthead
+            backgroundColor="light"
+            className="eodh-masthead"
             keycloak={keycloak}
             features={{ hasManageAccount: false }}
             brand={{
                 href: indexHref,
-                src: logoWhiteUrl,
+                src: logoColourUrl,
                 alt: t("logo"),
                 className: style.brand
             }}
