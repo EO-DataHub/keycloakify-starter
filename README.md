@@ -36,11 +36,29 @@ npm run build-keycloak-theme
 Note that by default Keycloakify generates multiple .jar files for different versions of Keycloak.  
 You can customize this behavior, see documentation [here](https://docs.keycloakify.dev/targeting-specific-keycloak-versions).
 
-# Initializing the account theme
+# Account theme
 
-```bash
-npx keycloakify initialize-account-theme
-```
+The account console uses Keycloakify's **Single-Page** flavour (`accountThemeImplementation: "Single-Page"` in
+`vite.config.ts`): the upstream Keycloak Account Console v3 (`@keycloakify/keycloak-account-ui`, versioned after
+the Keycloak server it targets — keep it paired with the Keycloak version in `EO-DataHub/eodh-keycloak`) is copied
+into `src/account/` and `src/shared/` by the `postinstall` script (`keycloakify sync-extensions`). Those copies are
+git-ignored (`src/.gitignore`, managed by Keycloakify); only the files we have claimed with `npx keycloakify own`
+are committed and carry the EODH skin:
+
+-   `src/account/KcAccountUi.tsx` — imports `main.css`, keeps dark mode off
+-   `src/account/root/Header.tsx` — light masthead with the colour logo
+-   `src/account/root/PageNav.tsx` — light sidebar
+-   `src/account/root/Root.tsx` — navy footer band
+-   `src/account/components/page/Page.tsx` — hero band + card layout used by every console page
+-   `src/account/main.css` — PatternFly 5 overrides (design tokens in `src/shared/eodh-tokens.css`)
+-   `public/keycloak-theme/account/early-color-scheme.js` — forces light mode before the app loads
+
+To customise another upstream file run `npx keycloakify own --path "account/<path>"` and commit the result.
+The real console cannot run in Storybook (it needs a live Keycloak); `account/console skin preview` stories
+render the same PatternFly components with this skin for a quick visual check.
+
+Deploying: bump `THEME_REF` in the `eodh-keycloak` Dockerfile and set the realm's _Account theme_ to
+`keycloakify-starter`.
 
 # Initializing the email theme
 
