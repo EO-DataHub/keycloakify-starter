@@ -5,6 +5,19 @@
    Doubled selectors (:root:root, .x.x) beat PatternFly's own rules
    regardless of bundled CSS order. */
 
+/* Shell: flex column so the footer band spans sidebar and content */
+
+.eodh-account-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.eodh-account-shell > .pf-v5-c-page {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
 /* Global PatternFly tokens */
 
 :root:root {
@@ -50,6 +63,37 @@
     height: auto;
 }
 
+/* Nav toggle (burger): dark on light chrome like the site's */
+.eodh-masthead .pf-v5-c-page__header-brand-toggle .pf-v5-c-button,
+.eodh-masthead .pf-v5-c-masthead__toggle .pf-v5-c-button {
+    --pf-v5-c-button--m-plain--Color: var(--eodh-navy);
+    --pf-v5-c-button--m-plain--hover--Color: var(--eodh-accent);
+    --pf-v5-c-button--m-plain--focus--Color: var(--eodh-accent);
+    --pf-v5-c-button--m-plain--active--Color: var(--eodh-accent);
+    color: var(--eodh-navy);
+    font-size: 1.35rem;
+}
+
+.eodh-masthead .pf-v5-c-page__header-brand-toggle .pf-v5-c-button:hover,
+.eodh-masthead .pf-v5-c-masthead__toggle .pf-v5-c-button:hover {
+    color: var(--eodh-accent);
+}
+
+/* Signed-in avatar (DefaultAvatar.tsx): no PF frame, coloured via currentColor */
+.eodh-masthead .pf-v5-c-avatar.pf-v5-c-avatar {
+    --pf-v5-c-avatar--BorderColor: transparent;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 0;
+    color: var(--eodh-navy);
+    transition: color 0.2s ease;
+}
+
+.eodh-masthead .pf-v5-c-avatar.pf-v5-c-avatar:hover {
+    color: var(--eodh-accent);
+}
+
 /* User dropdown toggle: plain text like the site's menu items */
 .eodh-masthead .pf-v5-c-menu-toggle {
     --pf-v5-c-menu-toggle--Color: #000;
@@ -84,18 +128,20 @@
     color: #fff;
 }
 
-/* Sidebar: white with the site's hairline border; accent current item */
-
+/* Sidebar: band grey with the site's hairline border; accent current item */
 .pf-v5-c-page__sidebar.pf-v5-c-page__sidebar.pf-m-light {
+    --pf-v5-c-page__sidebar--m-light--BackgroundColor: var(--eodh-band-bg);
     --pf-v5-c-page__sidebar--m-light--BorderRightColor: rgb(128 128 128 / 15.8%);
     --pf-v5-c-page__sidebar--BoxShadow: none;
+    background-color: var(--eodh-band-bg);
 }
 
 .pf-v5-c-nav.pf-v5-c-nav.pf-m-light {
+    --pf-v5-c-nav--m-light--BackgroundColor: transparent;
     --pf-v5-c-nav--m-light__link--Color: #000;
-    --pf-v5-c-nav--m-light__link--hover--BackgroundColor: rgb(76 114 186 / 6%);
+    --pf-v5-c-nav--m-light__link--hover--BackgroundColor: rgb(76 114 186 / 12%);
     --pf-v5-c-nav--m-light__link--m-current--Color: var(--eodh-accent);
-    --pf-v5-c-nav--m-light__link--m-current--BackgroundColor: rgb(76 114 186 / 10%);
+    --pf-v5-c-nav--m-light__link--m-current--BackgroundColor: rgb(76 114 186 / 20%);
     --pf-v5-c-nav--m-light__link--m-current--after--BorderColor: var(--eodh-accent);
     --pf-v5-c-nav--m-light__subnav__link--m-current--after--BorderColor: var(
         --eodh-accent
@@ -261,10 +307,10 @@
     border-radius: var(--eodh-radius-sm);
 }
 
-/* Navy footer band matching the login pages; margin-top pins it to the bottom */
+/* Navy footer band matching the login pages */
 
 #eodh-account-footer {
-    margin-top: auto;
+    flex: 0 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

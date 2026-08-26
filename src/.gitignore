@@ -6,6 +6,7 @@
 # account/root/PageNav.tsx
 # account/root/Root.tsx
 # account/components/page/Page.tsx
+# shared/keycloak-ui-shared/masthead/DefaultAvatar.tsx
 # === Owned files end =====
 
 # === @keycloakify/keycloak-ui-shared v260700.0.2 ===
@@ -37,7 +38,6 @@
 /shared/keycloak-ui-shared/controls/TextAreaControl.tsx
 /shared/keycloak-ui-shared/controls/TextControl.tsx
 /shared/keycloak-ui-shared/icons/IconMapper.tsx
-/shared/keycloak-ui-shared/masthead/DefaultAvatar.tsx
 /shared/keycloak-ui-shared/masthead/KeycloakDropdown.tsx
 /shared/keycloak-ui-shared/masthead/Masthead.tsx
 /shared/keycloak-ui-shared/scroll-form/form-title.module.css

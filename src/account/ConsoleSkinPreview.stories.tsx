@@ -47,6 +47,7 @@ import {
     SyncAltIcon
 } from "@patternfly/react-icons";
 import logoColourUrl from "../login/assets/eo-datahub-logo-colour.svg";
+import { DefaultAvatar } from "../shared/keycloak-ui-shared/masthead/DefaultAvatar";
 import { Page as ConsolePage } from "./components/page/Page";
 
 import "@patternfly/patternfly/patternfly-addons.css";
@@ -82,6 +83,12 @@ function ConsoleSkinPreview(props: { active: ActivePage }) {
                     <ToolbarContent>
                         <ToolbarItem align={{ default: "alignRight" }}>
                             <MenuToggle>Test User</MenuToggle>
+                        </ToolbarItem>
+                        <ToolbarItem
+                            variant="overflow-menu"
+                            align={{ default: "alignRight" }}
+                        >
+                            <DefaultAvatar />
                         </ToolbarItem>
                     </ToolbarContent>
                 </Toolbar>
@@ -123,12 +130,15 @@ function ConsoleSkinPreview(props: { active: ActivePage }) {
         </PageSidebar>
     );
 
+    // Mirrors root/Root.tsx
     return (
-        <Page header={header} sidebar={sidebar} isManagedSidebar>
-            {active === "personal-info" && <PersonalInfoSection />}
-            {active === "signing-in" && <SigningInSection />}
-            {active === "device-activity" && <DeviceActivitySection />}
-            {active === "applications" && <ApplicationsSection />}
+        <div className="eodh-account-shell">
+            <Page header={header} sidebar={sidebar} isManagedSidebar>
+                {active === "personal-info" && <PersonalInfoSection />}
+                {active === "signing-in" && <SigningInSection />}
+                {active === "device-activity" && <DeviceActivitySection />}
+                {active === "applications" && <ApplicationsSection />}
+            </Page>
             <footer id="eodh-account-footer">
                 <span>
                     © {new Date().getFullYear()} Earth Observation DataHub (EODH)
@@ -150,7 +160,7 @@ function ConsoleSkinPreview(props: { active: ActivePage }) {
                     </a>
                 </nav>
             </footer>
-        </Page>
+        </div>
     );
 }
 

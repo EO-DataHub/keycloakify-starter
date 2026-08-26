@@ -48,7 +48,8 @@ are committed and carry the EODH skin:
 -   `src/account/KcAccountUi.tsx` — imports `main.css`, keeps dark mode off
 -   `src/account/root/Header.tsx` — light masthead with the colour logo
 -   `src/account/root/PageNav.tsx` — light sidebar
--   `src/account/root/Root.tsx` — navy footer band
+-   `src/account/root/Root.tsx` — navy footer band, rendered outside `<Page>` so it spans the sidebar
+-   `src/shared/keycloak-ui-shared/masthead/DefaultAvatar.tsx` — the site's signed-in account icon
 -   `src/account/components/page/Page.tsx` — hero band + card layout used by every console page
 -   `src/account/main.css` — PatternFly 5 overrides (design tokens in `src/shared/eodh-tokens.css`)
 -   `public/keycloak-theme/account/early-color-scheme.js` — forces light mode before the app loads

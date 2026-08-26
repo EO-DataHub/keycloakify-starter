@@ -83,10 +83,17 @@ export const Root = () => {
                         new URL(context.environment.baseUrl).pathname
                     ),
                     element: (
-                        <Page header={<Header />} sidebar={<PageNav />} isManagedSidebar>
-                            <Suspense fallback={<Spinner />}>
-                                <Outlet />
-                            </Suspense>
+                        // EODH: footer outside <Page> so it spans the sidebar too
+                        <div className="eodh-account-shell">
+                            <Page
+                                header={<Header />}
+                                sidebar={<PageNav />}
+                                isManagedSidebar
+                            >
+                                <Suspense fallback={<Spinner />}>
+                                    <Outlet />
+                                </Suspense>
+                            </Page>
                             <footer id="eodh-account-footer">
                                 <span>
                                     © {new Date().getFullYear()} Earth Observation
@@ -109,7 +116,7 @@ export const Root = () => {
                                     </a>
                                 </nav>
                             </footer>
-                        </Page>
+                        </div>
                     ),
                     errorElement: <ErrorPage />,
                     children: [
