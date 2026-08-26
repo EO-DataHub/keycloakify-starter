@@ -57,9 +57,18 @@
     border-bottom: var(--eodh-content-border);
 }
 
+/* Logo sized as the site's .logo: 180px border-box, 1.15rem right padding */
+.eodh-masthead .pf-v5-c-masthead__brand {
+    box-sizing: border-box;
+    width: 180px;
+    min-width: 180px;
+    padding-right: 1.15rem;
+}
+
 .eodh-masthead .pf-v5-c-masthead__brand img {
-    width: 185px;
-    max-width: 100%;
+    display: block;
+    width: 100%;
+    max-width: 185px;
     height: auto;
 }
 
@@ -348,6 +357,13 @@
 }
 
 @media (max-width: 768px) {
+    /* The site caps the logo at 160px once the menu collapses */
+    .eodh-masthead .pf-v5-c-masthead__brand {
+        width: auto;
+        min-width: 0;
+        padding-right: 0;
+    }
+
     .eodh-masthead .pf-v5-c-masthead__brand img {
         width: 160px;
     }
