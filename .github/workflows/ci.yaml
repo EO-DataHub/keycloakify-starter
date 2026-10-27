@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
+            - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
             - uses: bahmutov/npm-install@v1
             - run: npm run build-keycloak-theme
 
@@ -39,7 +39,7 @@ jobs:
         if: needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true'
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
+            - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
             - uses: bahmutov/npm-install@v1
             - run: npm run build-keycloak-theme
             - uses: softprops/action-gh-release@v2
